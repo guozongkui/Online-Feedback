@@ -8,13 +8,25 @@
                 </p>
             </div>
             <div>
-                <Card></Card>
+                <Card>
+                    <Button>反馈问题</Button>
+                </Card>
             </div>
         </Card>
     </div>
 </template>
 <script>
 export default {
+  data () {
+    return {
+
+    }
+  },
+  methods: {
+    feedback () {
+
+    }
+  }
 }
 </script>
 <style lang="less" scoped>
