@@ -9,7 +9,7 @@
             </div>
             <div>
                 <Card>
-                    <Button>反馈问题</Button>
+                    <Button type="primary" @click="feedback">反馈问题</Button>
                 </Card>
             </div>
         </Card>
@@ -24,7 +24,9 @@ export default {
   },
   methods: {
     feedback () {
-
+        this.getRequest('/feedback','').then(response => {
+            console.log(response)
+        })
     }
   }
 }

@@ -1,7 +1,9 @@
+
+const path = require('path')
 const express = require('express')
 const app = express()
 
-app.get('/api/feedback', (req, res, next) => {
+app.get('/feedback', (req, res, next) => {
   res.json({
     data: 'OKOK!'
   })
