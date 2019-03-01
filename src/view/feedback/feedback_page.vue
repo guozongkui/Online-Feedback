@@ -2,15 +2,16 @@
     <div>
         <Card>
             <div slot="title">
-                <p>
+                <p style="height:auto;">
                     <Icon type="md-remove"/>
                     问题反馈
+                    <Button type="primary" @click="feedback" style="float:right;">反馈问题</Button>
                 </p>
+                
             </div>
             <div>
-                <Card>
-                    <Button type="primary" @click="feedback">反馈问题</Button>
-                </Card>
+                
+                <Table :columns="columns" :data="data" border stripe></Table>
             </div>
         </Card>
     </div>
@@ -19,7 +20,24 @@
 export default {
   data () {
     return {
-
+        columns: [
+            {
+                title: '提问者',
+                key: 'questioner',
+                align: 'center'
+            },
+            {
+                title: '提出日期',
+                key: 'proposedtime',
+                align: 'center'
+            },
+            {
+                title: '内容',
+                key: 'content',
+                align: 'center'
+            }
+        ],
+        data: []
     }
   },
   methods: {
