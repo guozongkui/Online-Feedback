@@ -5,6 +5,6 @@ module.exports = {
     user: '', //用户名
     password: '', //密码
     database: '', //数据库名
-    port: '', //端口号
+    port: '' //端口号
   }
 }

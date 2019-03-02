@@ -1,12 +1,25 @@
 const mysql = require('mysql');
-const mysqlConfig = require('./db');
+const dbConfig = require('./db');
 const sqlMap = require('./sqlMap');
 
 const pool = mysql.createPool({
-  host: mysqlConfig.host,
-  user: mysqlConfig.user,
-  password: mysqlConfig.password,
-  database: mysqlConfig.database,
-  port: mysqlConfig.port,
+  host: dbConfig.mysql.host,
+  user: dbConfig.mysql.user,
+  password: dbConfig.mysql.password,
+  database: dbConfig.mysql.database,
+  port: dbConfig.mysql.port,
   multipleStatements: true
 });
+
+module.exports = {
+  feedback(req, res, next) { 
+    pool.query('', function (err, results, fields) {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json(results);
+    });
+  }
+}
+

@@ -1,6 +1,6 @@
 //SQL列表
-module.exports = {
-  sqlMap: {
-
-  }
+const sqlMap = {
+  
 }
+
+module.exports = sqlMap;
